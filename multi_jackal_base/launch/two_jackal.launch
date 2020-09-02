@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="gui"       default="true"/>
+  <arg name="rviz"      default="true"/>
+  <arg name="config"    default="base" />
+  <arg name="world"     default="$(find jackal_world)/worlds/plant_row.world"/>
+  <arg name="ns1"        default="jackal1"/>
+  <arg name="ns2"        default="jackal2"/>
+
+
+  <!-- Start Gazebo. -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui"          value="$(arg gui)"/>
+    <!-- <arg name="world_name"   value="$(arg world)"/> -->
+    <arg name="debug" value="0" />
+    <arg name="headless" value="false" />
+  </include>
+
+  <!-- Spawn the robots. -->
+  <include file="$(find multi_jackal_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns1)"/>
+    <!-- <arg name="config"        value="base"/> -->
+    <!-- <arg name="config_id"     value="$(arg config1_id)"/> -->
+    <!-- <arg name="x"             value="5"/>
+    <arg name="y"             value="5"/> -->
+  </include>
+  <include file="$(find multi_jackal_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns2)"/>
+    <arg name="x"             value="5"/>
+    <arg name="y"             value="5"/>
+  </include>
+  
+  <!-- View in RVIZ. -->
+  <!-- <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jackal_world)/rviz/jackal.rviz" >
+    </node>
+  </group> -->
+
+</launch>
