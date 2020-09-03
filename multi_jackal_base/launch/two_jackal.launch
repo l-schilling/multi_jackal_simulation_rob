@@ -7,8 +7,6 @@
   <arg name="world"     default="$(find jackal_world)/worlds/plant_row.world"/>
   <arg name="ns1"       default="jackal1"/>
   <arg name="ns2"       default="jackal2"/>
-  <arg name="config1_id"     default="1"/>
-  <arg name="config2_id"     default="2"/>
 
 
 
@@ -25,15 +23,14 @@
   <include file="$(find multi_jackal_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config)"/>
-    <arg name="config_id"     value="$(arg config1_id)"/>
     <!-- <arg name="x"             value="5"/>
     <arg name="y"             value="5"/> -->
   </include>
   <include file="$(find multi_jackal_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns2)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="5"/>
-    <arg name="y"             value="5"/>
+    <arg name="x"             value="1"/>
+    <arg name="y"             value="1"/>
   </include>
   
   <!-- View in RVIZ. -->
