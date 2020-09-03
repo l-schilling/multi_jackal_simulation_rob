@@ -18,7 +18,16 @@
     <arg name="config"    value="$(arg config)" />
     <arg name="config_id" value="$(arg config_id)"/>
   </include>
-  <!-- <include file="$(find jackal_control)/launch/control.launch" /> -->
+  <include file="$(find multi_jackal_control)/launch/control.launch" >
+    <arg name="ns"        value="$(arg ns)"/>
+    <arg name="x"         value="$(arg x)"/>
+    <arg name="y"         value="$(arg y)"/>
+    <arg name="z"         value="$(arg z)"/>
+    <arg name="roll"      value="$(arg roll)"/>
+    <arg name="pitch"     value="$(arg pitch)"/>
+    <arg name="yaw"       value="$(arg yaw)"/>
+  </include>
+
 
   <!-- Spawn Jackal -->
   <node name="$(arg ns)_urdf_spawner" pkg="gazebo_ros" type="spawn_model"

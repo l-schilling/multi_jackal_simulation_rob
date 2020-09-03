@@ -24,7 +24,8 @@
     </plugin>
   </gazebo>
 
-  <gazebo>
+  <!-- GPS not yet implemented -->
+  <!-- <gazebo>
     <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
       <updateRate>40</updateRate>
       <robotNamespace>/$(arg namespace)</robotNamespace>
@@ -38,7 +39,7 @@
       <referenceAltitude>0</referenceAltitude>
       <drift>0.0001 0.0001 0.0001</drift>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
   <gazebo reference="base_link">
     <turnGravityOff>false</turnGravityOff>
