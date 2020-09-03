@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="jackal" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:arg name="namespace" default="1" />
+  <xacro:arg name="namespace" default="jackal1" />
 
   <xacro:property name="PI" value="3.1415926535897931" />
 
@@ -335,10 +335,10 @@
 	<!--x = 0.0065 + 0.06, z= 0.07 + 0.07 + 0.005-->
       <origin xyz="0.0665 0 0.145"/>
   </joint>
-  <!-- <xacro:include filename="$(find jackal_description)/urdf/OS1-64.urdf.xacro"/>
-  <OS1-64 parent="lidar_mounting_frame" name="os1-64">
+  <xacro:include filename="$(find multi_jackal_description)/urdf/OS1-64.urdf.xacro" />
+  <OS1-64 parent="lidar_mounting_frame" name="os1" topic_imu="os1_cloud_node/imu" topic_points="os1_cloud_node/points">
     <origin xyz="0 0 0.035" rpy="0 0 0" />
-  </OS1-64> -->
+  </OS1-64>
 
 
   <!-- Bring in simulation data for Gazebo. -->

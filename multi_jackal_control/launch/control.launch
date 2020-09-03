@@ -31,8 +31,6 @@
   <!-- local EKF from IMU and wheel odometry -->
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization"  ns="$(arg ns)" output="screen">
     <rosparam command="load" file="$(find multi_jackal_control)/config/robot_localization.yaml" />
-    <!-- <param name="odom0"     value="$(arg ns)/jackal_velocity_controller/odom"/>
-    <param name="imu0"     value="$(arg ns)/imu/data"/> -->
     <param name="odom0"     value="jackal_velocity_controller/odom"/>
     <param name="imu0"     value="imu/data"/>
     <param name="map_frame"       value="/map"/>
@@ -49,8 +47,8 @@
        position must match the start position used in Gazebo but Gazebo will 
        handle rotation transform.
        (x y z yaw pitch roll frame_id child_frame_id period_in_ms) -->
-  <!-- <node pkg="tf" type="static_transform_publisher" name="static_map_odom_tf" ns="$(arg ns)"
-        args="$(arg x) $(arg y) $(arg z) 0 0 0 /map $(arg ns)/odom 100"/> -->
+  <node pkg="tf" type="static_transform_publisher" name="static_map_odom_tf" ns="$(arg ns)"
+        args="$(arg x) $(arg y) $(arg z) 0 0 0 /map $(arg ns)/odom 100"/>
 
   <node pkg="twist_mux" type="twist_mux" name="twist_mux" ns="$(arg ns)">
     <rosparam command="load" file="$(find multi_jackal_control)/config/twist_mux.yaml" />
