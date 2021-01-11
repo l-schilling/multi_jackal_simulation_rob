@@ -25,7 +25,7 @@ cd src
 ## 4. Clone repos
 Clone following repos into your src folder
 ```
-git clone https://github.com/l-schilling/jackal_simulation_rob.git
+git clone https://github.com/l-schilling/multi_jackal_simulation_rob.git
 git clone https://github.com/wilselby/ouster_example
 ```
 
