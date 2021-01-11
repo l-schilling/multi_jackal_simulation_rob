@@ -41,6 +41,17 @@
     </plugin>
   </gazebo> -->
 
+  <!-- publish actual jackal position -->
+  <gazebo>
+    <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+      <robotNamespace>/$(arg namespace)</robotNamespace>
+      <frameName>map</frameName>
+      <bodyName>base_link</bodyName>
+      <topicName>odom_ground_truth</topicName>
+      <updateRate>5.0</updateRate>
+    </plugin>
+  </gazebo>
+
   <gazebo reference="base_link">
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
