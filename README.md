@@ -25,7 +25,7 @@ cd src
 ## 4. Clone repos
 Clone following repos into your src folder
 ```
-git clone https://github.com/l-schilling/jackal_simulation_rob.git
+git clone https://github.com/l-schilling/multi_jackal_simulation_rob.git
 git clone https://github.com/wilselby/ouster_example
 ```
 
@@ -39,9 +39,9 @@ If needed source your workspace (in your catkin_ws: source devel/setup.bash)
 
 ## 6. Run simulation
 ```
-roslaunch jackal_base jackal.launch
+roslaunch multi_jackal_base two_jackal.launch
 ```
 
 
 ZED Camera currently not supported in Gazebo.
-For a quick fix you can change the argument config in the file jackal_base/launch/jackal.launch to "front_bumblebee2"
+For a quick fix you can change the argument config in the file base_jackal.launch to "front_bumblebee2"
