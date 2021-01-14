@@ -28,6 +28,8 @@
     <arg name="yaw"       value="$(arg yaw)"/>
   </include>
 
+  <node pkg="multi_jackal_control" name="$(arg ns)_random_explore" type="random_explore_without_limits.py" output="screen" args="$(arg ns)"/> 
+
 
   <!-- Spawn Jackal -->
   <node name="$(arg ns)_urdf_spawner" pkg="gazebo_ros" type="spawn_model"
